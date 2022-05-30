@@ -1,0 +1,347 @@
+INFO:run:=== Task: SST-2 ===
+INFO:run:Namespace(data_dir='data/k-shot/SST-2/16-13', model_type='bert', model_name_or_path='models', cache_dir='pretrain/bert', task_name='SST-2', output_dir='output/SST-2/lstm/16-13', overwrite_output_dir=True, pattern_ids=[1], alpha=0.9999, pet_repetitions=1, pet_max_seq_length=128, pet_per_gpu_train_batch_size=128, pet_per_gpu_eval_batch_size=128, pet_gradient_accumulation_steps=1, pet_num_train_epochs=3, pet_max_steps=250, pet_max_steps_stage1=250, train_examples=-1, eval_examples=-1, dev_examples=-1, split_examples_evenly=False, learning_rate=0.0001, learning_rate_stage1=0.0001, weight_decay=0.1, adam_epsilon=1e-08, max_grad_norm=1.0, warmup_steps=0, early_stop_epochs=8, no_cuda=False, seed=42, do_train=True, do_eval=False, eval_set='test', embed_size=768, prompt_encoder_type='lstm', eval_every_step=10, two_stage_train=False, extra_mask_rate=0.0, device='cuda', n_gpu=1, label_list=['0', '1', '-1'], metrics=['acc'])
+INFO:run:--- Running data split: 16-13 ---
+Traceback (most recent call last):
+  File "/hy-tmp/origin_dart/run.py", line 184, in <module>
+    main()
+  File "/hy-tmp/origin_dart/run.py", line 154, in main
+    train_pet(args)
+  File "/hy-tmp/origin_dart/train.py", line 33, in train_pet
+    train_data = load_examples(args.task_name, args.data_dir, TRAIN_SET,
+  File "/hy-tmp/origin_dart/data_utils/processors.py", line 882, in load_examples
+    examples = processor.get_train_examples(data_dir)
+  File "/hy-tmp/origin_dart/data_utils/processors.py", line 576, in get_train_examples
+    return self._create_examples(os.path.join(data_dir, "train_prompt.tsv"), "train")
+  File "/hy-tmp/origin_dart/data_utils/processors.py", line 598, in _create_examples
+    with open(path, encoding='utf8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/k-shot/SST-2/16-13/train_prompt.tsv'
+INFO:run:=== Task: SST-2 ===
+INFO:run:Namespace(data_dir='data/k-shot/SST-2/16-13', model_type='bert', model_name_or_path='models', cache_dir='pretrain/bert', task_name='SST-2', output_dir='output/SST-2/lstm/16-13', overwrite_output_dir=True, pattern_ids=[1], alpha=0.9999, pet_repetitions=1, pet_max_seq_length=128, pet_per_gpu_train_batch_size=128, pet_per_gpu_eval_batch_size=128, pet_gradient_accumulation_steps=1, pet_num_train_epochs=3, pet_max_steps=250, pet_max_steps_stage1=250, train_examples=-1, eval_examples=-1, dev_examples=-1, split_examples_evenly=False, learning_rate=0.0001, learning_rate_stage1=0.0001, weight_decay=0.1, adam_epsilon=1e-08, max_grad_norm=1.0, warmup_steps=0, early_stop_epochs=8, no_cuda=False, seed=42, do_train=True, do_eval=False, eval_set='test', embed_size=768, prompt_encoder_type='lstm', eval_every_step=10, two_stage_train=False, extra_mask_rate=0.0, device='cuda', n_gpu=1, label_list=['0', '1', '-1'], metrics=['acc'])
+INFO:run:--- Running data split: 16-13 ---
+Some weights of the model checkpoint at models were not used when initializing BertForMaskedLM: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+INFO:train:--- Start iteration 0 ---
+INFO:train:=== Start training ===
+config.device== cuda
+Epoch:   0%|          | 0/3 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/30 [00:00<?, ?it/s][A
+Evaluating:   3%|▎         | 1/30 [00:00<00:05,  4.84it/s][A
+Evaluating:   7%|▋         | 2/30 [00:00<00:05,  4.87it/s][A
+Evaluating:  10%|█         | 3/30 [00:00<00:05,  4.87it/s][A
+Evaluating:  13%|█▎        | 4/30 [00:00<00:05,  4.82it/s][A
+Evaluating:  17%|█▋        | 5/30 [00:01<00:05,  4.65it/s][A
+Evaluating:  20%|██        | 6/30 [00:01<00:05,  4.62it/s][A
+Evaluating:  23%|██▎       | 7/30 [00:01<00:05,  4.59it/s][A
+Evaluating:  27%|██▋       | 8/30 [00:01<00:04,  4.53it/s][A
+Evaluating:  30%|███       | 9/30 [00:01<00:04,  4.47it/s][A
+Evaluating:  33%|███▎      | 10/30 [00:02<00:04,  4.42it/s][A
+Evaluating:  37%|███▋      | 11/30 [00:02<00:04,  4.34it/s][A
+Evaluating:  40%|████      | 12/30 [00:02<00:04,  4.27it/s][A
+Evaluating:  43%|████▎     | 13/30 [00:02<00:04,  4.22it/s][A
+Evaluating:  47%|████▋     | 14/30 [00:03<00:03,  4.14it/s][A
+Evaluating:  50%|█████     | 15/30 [00:03<00:03,  4.06it/s][A
+Evaluating:  53%|█████▎    | 16/30 [00:03<00:03,  4.02it/s][A
+Evaluating:  57%|█████▋    | 17/30 [00:03<00:03,  4.07it/s][A
+Evaluating:  60%|██████    | 18/30 [00:04<00:02,  4.10it/s][A
+Evaluating:  63%|██████▎   | 19/30 [00:04<00:02,  3.95it/s][A
+Evaluating:  67%|██████▋   | 20/30 [00:04<00:02,  3.82it/s][A
+Evaluating:  70%|███████   | 21/30 [00:04<00:02,  3.73it/s][A
+Evaluating:  73%|███████▎  | 22/30 [00:05<00:02,  3.66it/s][A
+Evaluating:  77%|███████▋  | 23/30 [00:05<00:01,  3.59it/s][A
+Evaluating:  80%|████████  | 24/30 [00:05<00:01,  3.54it/s][A
+Evaluating:  83%|████████▎ | 25/30 [00:06<00:01,  3.50it/s][A
+Evaluating:  87%|████████▋ | 26/30 [00:06<00:01,  3.44it/s][A
+Evaluating:  90%|█████████ | 27/30 [00:06<00:00,  3.38it/s][A
+Evaluating:  93%|█████████▎| 28/30 [00:07<00:00,  3.36it/s][A
+Evaluating:  97%|█████████▋| 29/30 [00:07<00:00,  3.30it/s][A
+Evaluating: 100%|██████████| 30/30 [00:07<00:00,  3.72it/s][AEvaluating: 100%|██████████| 30/30 [00:07<00:00,  3.96it/s]
+INFO:model:Best acc on dev: -1.0000 | global step: 0
+
+Evaluating:   0%|          | 0/59 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/59 [00:00<00:11,  4.86it/s][A
+Evaluating:   3%|▎         | 2/59 [00:00<00:11,  4.85it/s][A
+Evaluating:   5%|▌         | 3/59 [00:00<00:11,  4.83it/s][A
+Evaluating:   7%|▋         | 4/59 [00:00<00:11,  4.76it/s][A
+Evaluating:   8%|▊         | 5/59 [00:01<00:11,  4.73it/s][A
+Evaluating:  10%|█         | 6/59 [00:01<00:11,  4.67it/s][A
+Evaluating:  12%|█▏        | 7/59 [00:01<00:11,  4.61it/s][A
+Evaluating:  14%|█▎        | 8/59 [00:01<00:11,  4.44it/s][A
+Evaluating:  15%|█▌        | 9/59 [00:01<00:11,  4.40it/s][A
+Evaluating:  17%|█▋        | 10/59 [00:02<00:11,  4.37it/s][A
+Evaluating:  19%|█▊        | 11/59 [00:02<00:11,  4.31it/s][A
+Evaluating:  20%|██        | 12/59 [00:02<00:11,  4.23it/s][A
+Evaluating:  22%|██▏       | 13/59 [00:02<00:11,  4.11it/s][A
+Evaluating:  24%|██▎       | 14/59 [00:03<00:11,  4.07it/s][A
+Evaluating:  25%|██▌       | 15/59 [00:03<00:10,  4.01it/s][A
+Evaluating:  27%|██▋       | 16/59 [00:03<00:10,  3.97it/s][A
+Evaluating:  29%|██▉       | 17/59 [00:03<00:10,  3.91it/s][A
+Evaluating:  31%|███       | 18/59 [00:04<00:10,  3.85it/s][A
+Evaluating:  32%|███▏      | 19/59 [00:04<00:10,  3.81it/s][A
+Evaluating:  34%|███▍      | 20/59 [00:04<00:10,  3.74it/s][A
+Evaluating:  36%|███▌      | 21/59 [00:05<00:10,  3.68it/s][A
+Evaluating:  37%|███▋      | 22/59 [00:05<00:10,  3.66it/s][A
+Evaluating:  39%|███▉      | 23/59 [00:05<00:10,  3.60it/s][A
+Evaluating:  41%|████      | 24/59 [00:05<00:09,  3.53it/s][A
+Evaluating:  42%|████▏     | 25/59 [00:06<00:09,  3.51it/s][A
+Evaluating:  44%|████▍     | 26/59 [00:06<00:09,  3.45it/s][A
+Evaluating:  46%|████▌     | 27/59 [00:06<00:09,  3.39it/s][A
+Evaluating:  47%|████▋     | 28/59 [00:07<00:09,  3.37it/s][A
+Evaluating:  49%|████▉     | 29/59 [00:07<00:09,  3.30it/s][A
+Evaluating:  51%|█████     | 30/59 [00:07<00:08,  3.25it/s][A
+Evaluating:  53%|█████▎    | 31/59 [00:08<00:08,  3.24it/s][A
+Evaluating:  54%|█████▍    | 32/59 [00:08<00:08,  3.18it/s][A
+Evaluating:  56%|█████▌    | 33/59 [00:08<00:08,  3.16it/s][A
+Evaluating:  58%|█████▊    | 34/59 [00:09<00:08,  3.10it/s][A
+Evaluating:  59%|█████▉    | 35/59 [00:09<00:07,  3.08it/s][A
+Evaluating:  61%|██████    | 36/59 [00:09<00:07,  3.01it/s][A
+Evaluating:  63%|██████▎   | 37/59 [00:10<00:07,  3.00it/s][A
+Evaluating:  64%|██████▍   | 38/59 [00:10<00:07,  2.96it/s][A
+Evaluating:  66%|██████▌   | 39/59 [00:10<00:06,  2.92it/s][A
+Evaluating:  68%|██████▊   | 40/59 [00:11<00:06,  2.86it/s][A
+Evaluating:  69%|██████▉   | 41/59 [00:11<00:06,  2.86it/s][A
+Evaluating:  71%|███████   | 42/59 [00:11<00:06,  2.81it/s][A
+Evaluating:  73%|███████▎  | 43/59 [00:12<00:05,  2.81it/s][A
+Evaluating:  75%|███████▍  | 44/59 [00:12<00:05,  2.76it/s][A
+Evaluating:  76%|███████▋  | 45/59 [00:12<00:05,  2.75it/s][A
+Evaluating:  78%|███████▊  | 46/59 [00:13<00:04,  2.70it/s][A
+Evaluating:  80%|███████▉  | 47/59 [00:13<00:04,  2.69it/s][A
+Evaluating:  81%|████████▏ | 48/59 [00:14<00:04,  2.65it/s][A
+Evaluating:  83%|████████▎ | 49/59 [00:14<00:03,  2.64it/s][A
+Evaluating:  85%|████████▍ | 50/59 [00:14<00:03,  2.59it/s][A
+Evaluating:  86%|████████▋ | 51/59 [00:15<00:02,  2.75it/s][A
+Evaluating:  88%|████████▊ | 52/59 [00:15<00:02,  2.85it/s][A
+Evaluating:  90%|████████▉ | 53/59 [00:15<00:02,  2.96it/s][A
+Evaluating:  92%|█████████▏| 54/59 [00:16<00:01,  3.00it/s][A
+Evaluating:  93%|█████████▎| 55/59 [00:16<00:01,  3.06it/s][A
+Evaluating:  95%|█████████▍| 56/59 [00:16<00:00,  3.05it/s][A
+Evaluating:  97%|█████████▋| 57/59 [00:17<00:00,  3.09it/s][A
+Evaluating:  98%|█████████▊| 58/59 [00:17<00:00,  3.05it/s][A
+Evaluating: 100%|██████████| 59/59 [00:17<00:00,  3.14it/s][AEvaluating: 100%|██████████| 59/59 [00:17<00:00,  3.32it/s]
+INFO:model:eval_data performance: {'acc': 0.8382118147951038}
+INFO:model:Saving trained model at output/SST-2/lstm/16-13/p1-i0...
+
+Evaluating:   0%|          | 0/30 [00:00<?, ?it/s][A
+Evaluating:   3%|▎         | 1/30 [00:00<00:06,  4.79it/s][A
+Evaluating:   7%|▋         | 2/30 [00:00<00:05,  4.84it/s][A
+Evaluating:  10%|█         | 3/30 [00:00<00:05,  4.88it/s][A
+Evaluating:  13%|█▎        | 4/30 [00:00<00:05,  4.87it/s][A
+Evaluating:  17%|█▋        | 5/30 [00:01<00:05,  4.86it/s][A
+Evaluating:  20%|██        | 6/30 [00:01<00:04,  4.83it/s][A
+Evaluating:  23%|██▎       | 7/30 [00:01<00:04,  4.80it/s][A
+Evaluating:  27%|██▋       | 8/30 [00:01<00:04,  4.70it/s][A
+Evaluating:  30%|███       | 9/30 [00:01<00:04,  4.66it/s][A
+Evaluating:  33%|███▎      | 10/30 [00:02<00:04,  4.62it/s][A
+Evaluating:  37%|███▋      | 11/30 [00:02<00:04,  4.56it/s][A
+Evaluating:  40%|████      | 12/30 [00:02<00:03,  4.53it/s][A
+Evaluating:  43%|████▎     | 13/30 [00:02<00:03,  4.51it/s][A
+Evaluating:  47%|████▋     | 14/30 [00:03<00:03,  4.46it/s][A
+Evaluating:  50%|█████     | 15/30 [00:03<00:03,  4.42it/s][A
+Evaluating:  53%|█████▎    | 16/30 [00:03<00:03,  4.40it/s][A
+Evaluating:  57%|█████▋    | 17/30 [00:03<00:02,  4.34it/s][A
+Evaluating:  60%|██████    | 18/30 [00:03<00:02,  4.30it/s][A
+Evaluating:  63%|██████▎   | 19/30 [00:04<00:02,  4.28it/s][A
+Evaluating:  67%|██████▋   | 20/30 [00:04<00:02,  4.23it/s][A
+Evaluating:  70%|███████   | 21/30 [00:04<00:02,  4.13it/s][A
+Evaluating:  73%|███████▎  | 22/30 [00:04<00:01,  4.13it/s][A
+Evaluating:  77%|███████▋  | 23/30 [00:05<00:01,  4.09it/s][A
+Evaluating:  80%|████████  | 24/30 [00:05<00:01,  4.05it/s][A
+Evaluating:  83%|████████▎ | 25/30 [00:05<00:01,  4.04it/s][A
+Evaluating:  87%|████████▋ | 26/30 [00:05<00:01,  3.92it/s][A
+Evaluating:  90%|█████████ | 27/30 [00:06<00:00,  3.88it/s][A
+Evaluating:  93%|█████████▎| 28/30 [00:06<00:00,  3.90it/s][A
+Evaluating:  97%|█████████▋| 29/30 [00:06<00:00,  3.86it/s][A
+Evaluating: 100%|██████████| 30/30 [00:06<00:00,  4.54it/s][AEvaluating: 100%|██████████| 30/30 [00:06<00:00,  4.37it/s]
+INFO:model:Dev scores: 0.8372 | early_stop_count: 1
+
+Evaluating:   0%|          | 0/59 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/59 [00:00<00:12,  4.48it/s][A
+Evaluating:   3%|▎         | 2/59 [00:00<00:12,  4.69it/s][A
+Evaluating:   5%|▌         | 3/59 [00:00<00:11,  4.77it/s][A
+Evaluating:   7%|▋         | 4/59 [00:00<00:11,  4.77it/s][A
+Evaluating:   8%|▊         | 5/59 [00:01<00:11,  4.79it/s][A
+Evaluating:  10%|█         | 6/59 [00:01<00:11,  4.75it/s][A
+Evaluating:  12%|█▏        | 7/59 [00:01<00:11,  4.67it/s][A
+Evaluating:  14%|█▎        | 8/59 [00:01<00:10,  4.66it/s][A
+Evaluating:  15%|█▌        | 9/59 [00:01<00:10,  4.63it/s][A
+Evaluating:  17%|█▋        | 10/59 [00:02<00:10,  4.63it/s][A
+Evaluating:  19%|█▊        | 11/59 [00:02<00:10,  4.59it/s][A
+Evaluating:  20%|██        | 12/59 [00:02<00:10,  4.55it/s][A
+Evaluating:  22%|██▏       | 13/59 [00:02<00:10,  4.53it/s][A
+Evaluating:  24%|██▎       | 14/59 [00:03<00:10,  4.48it/s][A
+Evaluating:  25%|██▌       | 15/59 [00:03<00:10,  4.40it/s][A
+Evaluating:  27%|██▋       | 16/59 [00:03<00:09,  4.38it/s][A
+Evaluating:  29%|██▉       | 17/59 [00:03<00:09,  4.32it/s][A
+Evaluating:  31%|███       | 18/59 [00:03<00:09,  4.26it/s][A
+Evaluating:  32%|███▏      | 19/59 [00:04<00:09,  4.26it/s][A
+Evaluating:  34%|███▍      | 20/59 [00:04<00:09,  4.22it/s][A
+Evaluating:  36%|███▌      | 21/59 [00:04<00:09,  4.18it/s][A
+Evaluating:  37%|███▋      | 22/59 [00:04<00:08,  4.16it/s][A
+Evaluating:  39%|███▉      | 23/59 [00:05<00:08,  4.11it/s][A
+Evaluating:  41%|████      | 24/59 [00:05<00:08,  4.07it/s][A
+Evaluating:  42%|████▏     | 25/59 [00:05<00:08,  4.05it/s][A
+Evaluating:  44%|████▍     | 26/59 [00:05<00:08,  4.00it/s][A
+Evaluating:  46%|████▌     | 27/59 [00:06<00:08,  3.96it/s][A
+Evaluating:  47%|████▋     | 28/59 [00:06<00:07,  3.96it/s][A
+Evaluating:  49%|████▉     | 29/59 [00:06<00:07,  3.91it/s][A
+Evaluating:  51%|█████     | 30/59 [00:06<00:07,  3.86it/s][A
+Evaluating:  53%|█████▎    | 31/59 [00:07<00:07,  3.86it/s][A
+Evaluating:  54%|█████▍    | 32/59 [00:07<00:07,  3.81it/s][A
+Evaluating:  56%|█████▌    | 33/59 [00:07<00:06,  3.76it/s][A
+Evaluating:  58%|█████▊    | 34/59 [00:08<00:06,  3.75it/s][A
+Evaluating:  59%|█████▉    | 35/59 [00:08<00:06,  3.65it/s][A
+Evaluating:  61%|██████    | 36/59 [00:08<00:06,  3.62it/s][A
+Evaluating:  63%|██████▎   | 37/59 [00:08<00:06,  3.64it/s][A
+Evaluating:  64%|██████▍   | 38/59 [00:09<00:05,  3.60it/s][A
+Evaluating:  66%|██████▌   | 39/59 [00:09<00:05,  3.51it/s][A
+Evaluating:  68%|██████▊   | 40/59 [00:09<00:05,  3.54it/s][A
+Evaluating:  69%|██████▉   | 41/59 [00:10<00:05,  3.50it/s][A
+Evaluating:  71%|███████   | 42/59 [00:10<00:04,  3.48it/s][A
+Evaluating:  73%|███████▎  | 43/59 [00:10<00:04,  3.49it/s][A
+Evaluating:  75%|███████▍  | 44/59 [00:10<00:04,  3.45it/s][A
+Evaluating:  76%|███████▋  | 45/59 [00:11<00:04,  3.45it/s][A
+Evaluating:  78%|███████▊  | 46/59 [00:11<00:03,  3.41it/s][A
+Evaluating:  80%|███████▉  | 47/59 [00:11<00:03,  3.41it/s][A
+Evaluating:  81%|████████▏ | 48/59 [00:12<00:03,  3.36it/s][A
+Evaluating:  83%|████████▎ | 49/59 [00:12<00:02,  3.36it/s][A
+Evaluating:  85%|████████▍ | 50/59 [00:12<00:02,  3.31it/s][A
+Evaluating:  86%|████████▋ | 51/59 [00:13<00:02,  3.32it/s][A
+Evaluating:  88%|████████▊ | 52/59 [00:13<00:02,  3.27it/s][A
+Evaluating:  90%|████████▉ | 53/59 [00:13<00:01,  3.27it/s][A
+Evaluating:  92%|█████████▏| 54/59 [00:13<00:01,  3.22it/s][A
+Evaluating:  93%|█████████▎| 55/59 [00:14<00:01,  3.22it/s][A
+Evaluating:  95%|█████████▍| 56/59 [00:14<00:00,  3.16it/s][A
+Evaluating:  97%|█████████▋| 57/59 [00:14<00:00,  3.17it/s][A
+Evaluating:  98%|█████████▊| 58/59 [00:15<00:00,  3.13it/s][A
+Evaluating: 100%|██████████| 59/59 [00:15<00:00,  3.30it/s][AEvaluating: 100%|██████████| 59/59 [00:15<00:00,  3.80it/s]
+INFO:model:eval_data performance: {'acc': 0.8382118147951038}
+INFO:model:Saving trained model at output/SST-2/lstm/16-13/p1-i0...
+
+Evaluating:   0%|          | 0/30 [00:00<?, ?it/s][A
+Evaluating:   3%|▎         | 1/30 [00:00<00:05,  4.89it/s][A
+Evaluating:   7%|▋         | 2/30 [00:00<00:05,  4.86it/s][A
+Evaluating:  10%|█         | 3/30 [00:00<00:05,  4.91it/s][A
+Evaluating:  13%|█▎        | 4/30 [00:00<00:05,  4.89it/s][A
+Evaluating:  17%|█▋        | 5/30 [00:01<00:05,  4.87it/s][A
+Evaluating:  20%|██        | 6/30 [00:01<00:04,  4.83it/s][A
+Evaluating:  23%|██▎       | 7/30 [00:01<00:04,  4.79it/s][A
+Evaluating:  27%|██▋       | 8/30 [00:01<00:04,  4.74it/s][A
+Evaluating:  30%|███       | 9/30 [00:01<00:04,  4.70it/s][A
+Evaluating:  33%|███▎      | 10/30 [00:02<00:04,  4.66it/s][A
+Evaluating:  37%|███▋      | 11/30 [00:02<00:04,  4.61it/s][A
+Evaluating:  40%|████      | 12/30 [00:02<00:03,  4.56it/s][A
+Evaluating:  43%|████▎     | 13/30 [00:02<00:03,  4.53it/s][A
+Evaluating:  47%|████▋     | 14/30 [00:03<00:03,  4.47it/s][A
+Evaluating:  50%|█████     | 15/30 [00:03<00:03,  4.42it/s][A
+Evaluating:  53%|█████▎    | 16/30 [00:03<00:03,  4.40it/s][A
+Evaluating:  57%|█████▋    | 17/30 [00:03<00:02,  4.35it/s][A
+Evaluating:  60%|██████    | 18/30 [00:03<00:02,  4.33it/s][A
+Evaluating:  63%|██████▎   | 19/30 [00:04<00:02,  4.28it/s][A
+Evaluating:  67%|██████▋   | 20/30 [00:04<00:02,  4.26it/s][A
+Evaluating:  70%|███████   | 21/30 [00:04<00:02,  4.19it/s][A
+Evaluating:  73%|███████▎  | 22/30 [00:04<00:01,  4.17it/s][A
+Evaluating:  77%|███████▋  | 23/30 [00:05<00:01,  4.12it/s][A
+Evaluating:  80%|████████  | 24/30 [00:05<00:01,  4.10it/s][A
+Evaluating:  83%|████████▎ | 25/30 [00:05<00:01,  4.04it/s][A
+Evaluating:  87%|████████▋ | 26/30 [00:05<00:00,  4.03it/s][A
+Evaluating:  90%|█████████ | 27/30 [00:06<00:00,  3.98it/s][A
+Evaluating:  93%|█████████▎| 28/30 [00:06<00:00,  3.94it/s][A
+Evaluating:  97%|█████████▋| 29/30 [00:06<00:00,  3.90it/s][A
+Evaluating: 100%|██████████| 30/30 [00:06<00:00,  4.64it/s][AEvaluating: 100%|██████████| 30/30 [00:06<00:00,  4.41it/s]
+INFO:model:Dev scores: 0.8372 | early_stop_count: 2
+
+Evaluating:   0%|          | 0/59 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/59 [00:00<00:11,  4.93it/s][A
+Evaluating:   3%|▎         | 2/59 [00:00<00:11,  5.00it/s][A
+Evaluating:   5%|▌         | 3/59 [00:00<00:11,  4.98it/s][A
+Evaluating:   7%|▋         | 4/59 [00:00<00:11,  4.94it/s][A
+Evaluating:   8%|▊         | 5/59 [00:01<00:11,  4.90it/s][A
+Evaluating:  10%|█         | 6/59 [00:01<00:10,  4.85it/s][A
+Evaluating:  12%|█▏        | 7/59 [00:01<00:10,  4.82it/s][A
+Evaluating:  14%|█▎        | 8/59 [00:01<00:10,  4.77it/s][A
+Evaluating:  15%|█▌        | 9/59 [00:01<00:10,  4.72it/s][A
+Evaluating:  17%|█▋        | 10/59 [00:02<00:10,  4.69it/s][A
+Evaluating:  19%|█▊        | 11/59 [00:02<00:10,  4.63it/s][A
+Evaluating:  20%|██        | 12/59 [00:02<00:10,  4.58it/s][A
+Evaluating:  22%|██▏       | 13/59 [00:02<00:10,  4.55it/s][A
+Evaluating:  24%|██▎       | 14/59 [00:02<00:09,  4.51it/s][A
+Evaluating:  25%|██▌       | 15/59 [00:03<00:09,  4.46it/s][A
+Evaluating:  27%|██▋       | 16/59 [00:03<00:09,  4.43it/s][A
+Evaluating:  29%|██▉       | 17/59 [00:03<00:09,  4.38it/s][A
+Evaluating:  31%|███       | 18/59 [00:03<00:09,  4.33it/s][A
+Evaluating:  32%|███▏      | 19/59 [00:04<00:09,  4.31it/s][A
+Evaluating:  34%|███▍      | 20/59 [00:04<00:09,  4.25it/s][A
+Evaluating:  36%|███▌      | 21/59 [00:04<00:09,  4.20it/s][A
+Evaluating:  37%|███▋      | 22/59 [00:04<00:08,  4.18it/s][A
+Evaluating:  39%|███▉      | 23/59 [00:05<00:08,  4.12it/s][A
+Evaluating:  41%|████      | 24/59 [00:05<00:08,  4.07it/s][A
+Evaluating:  42%|████▏     | 25/59 [00:05<00:08,  4.06it/s][A
+Evaluating:  44%|████▍     | 26/59 [00:05<00:08,  4.01it/s][A
+Evaluating:  46%|████▌     | 27/59 [00:06<00:08,  3.96it/s][A
+Evaluating:  47%|████▋     | 28/59 [00:06<00:07,  3.95it/s][A
+Evaluating:  49%|████▉     | 29/59 [00:06<00:07,  3.90it/s][A
+Evaluating:  51%|█████     | 30/59 [00:06<00:07,  3.90it/s][A
+Evaluating:  53%|█████▎    | 31/59 [00:07<00:07,  3.85it/s][A
+Evaluating:  54%|█████▍    | 32/59 [00:07<00:07,  3.84it/s][A
+Evaluating:  56%|█████▌    | 33/59 [00:07<00:06,  3.79it/s][A
+Evaluating:  58%|█████▊    | 34/59 [00:07<00:06,  3.78it/s][A
+Evaluating:  59%|█████▉    | 35/59 [00:08<00:06,  3.72it/s][A
+Evaluating:  61%|██████    | 36/59 [00:08<00:06,  3.70it/s][A
+Evaluating:  63%|██████▎   | 37/59 [00:08<00:06,  3.65it/s][A
+Evaluating:  64%|██████▍   | 38/59 [00:09<00:05,  3.66it/s][A
+Evaluating:  66%|██████▌   | 39/59 [00:09<00:05,  3.60it/s][A
+Evaluating:  68%|██████▊   | 40/59 [00:09<00:05,  3.55it/s][A
+Evaluating:  69%|██████▉   | 41/59 [00:09<00:05,  3.51it/s][A
+Evaluating:  71%|███████   | 42/59 [00:10<00:04,  3.52it/s][A
+Evaluating:  73%|███████▎  | 43/59 [00:10<00:04,  3.48it/s][A
+Evaluating:  75%|███████▍  | 44/59 [00:10<00:04,  3.48it/s][A
+Evaluating:  76%|███████▋  | 45/59 [00:11<00:04,  3.44it/s][A
+Evaluating:  78%|███████▊  | 46/59 [00:11<00:03,  3.44it/s][A
+Evaluating:  80%|███████▉  | 47/59 [00:11<00:03,  3.39it/s][A
+Evaluating:  81%|████████▏ | 48/59 [00:12<00:03,  3.39it/s][A
+Evaluating:  83%|████████▎ | 49/59 [00:12<00:02,  3.34it/s][A
+Evaluating:  85%|████████▍ | 50/59 [00:12<00:02,  3.35it/s][A
+Evaluating:  86%|████████▋ | 51/59 [00:12<00:02,  3.28it/s][A
+Evaluating:  88%|████████▊ | 52/59 [00:13<00:02,  3.29it/s][A
+Evaluating:  90%|████████▉ | 53/59 [00:13<00:01,  3.24it/s][A
+Evaluating:  92%|█████████▏| 54/59 [00:13<00:01,  3.25it/s][A
+Evaluating:  93%|█████████▎| 55/59 [00:14<00:01,  3.20it/s][A
+Evaluating:  95%|█████████▍| 56/59 [00:14<00:00,  3.21it/s][A
+Evaluating:  97%|█████████▋| 57/59 [00:14<00:00,  3.14it/s][A
+Evaluating:  98%|█████████▊| 58/59 [00:15<00:00,  3.10it/s][A
+Evaluating: 100%|██████████| 59/59 [00:15<00:00,  3.21it/s][AEvaluating: 100%|██████████| 59/59 [00:15<00:00,  3.82it/s]
+INFO:model:eval_data performance: {'acc': 0.8382118147951038}
+INFO:model:Saving trained model at output/SST-2/lstm/16-13/p1-i0...
+
+Evaluating:   0%|          | 0/30 [00:00<?, ?it/s][A
+Evaluating:   3%|▎         | 1/30 [00:00<00:05,  4.95it/s][A
+Evaluating:   7%|▋         | 2/30 [00:00<00:05,  4.87it/s][A
+Evaluating:  10%|█         | 3/30 [00:00<00:05,  4.91it/s][A
+Evaluating:  13%|█▎        | 4/30 [00:00<00:05,  4.90it/s][A
+Evaluating:  17%|█▋        | 5/30 [00:01<00:05,  4.90it/s][A
+Evaluating:  20%|██        | 6/30 [00:01<00:04,  4.82it/s][A
+Evaluating:  23%|██▎       | 7/30 [00:01<00:04,  4.79it/s][A
+Evaluating:  27%|██▋       | 8/30 [00:01<00:04,  4.77it/s][A
+Evaluating:  30%|███       | 9/30 [00:01<00:04,  4.73it/s][A
+Evaluating:  33%|███▎      | 10/30 [00:02<00:04,  4.68it/s][A
+Evaluating:  37%|███▋      | 11/30 [00:02<00:04,  4.65it/s][A
+Evaluating:  40%|████      | 12/30 [00:02<00:03,  4.59it/s][A
+Evaluating:  43%|████▎     | 13/30 [00:02<00:03,  4.54it/s][A
+Evaluating:  47%|████▋     | 14/30 [00:02<00:03,  4.51it/s][A
+Evaluating:  50%|█████     | 15/30 [00:03<00:03,  4.47it/s][A
+Evaluating:  53%|█████▎    | 16/30 [00:03<00:03,  4.42it/s][A
+Evaluating:  57%|█████▋    | 17/30 [00:03<00:02,  4.40it/s][A
+Evaluating:  60%|██████    | 18/30 [00:03<00:02,  4.35it/s][A
+Evaluating:  63%|██████▎   | 19/30 [00:04<00:02,  4.29it/s][A
+Evaluating:  67%|██████▋   | 20/30 [00:04<00:02,  4.28it/s][A
+Evaluating:  70%|███████   | 21/30 [00:04<00:02,  4.22it/s][A
+Evaluating:  73%|███████▎  | 22/30 [00:04<00:01,  4.17it/s][A
+Evaluating:  77%|███████▋  | 23/30 [00:05<00:01,  4.16it/s][A
+Evaluating:  80%|████████  | 24/30 [00:05<00:01,  4.11it/s][A
+Evaluating:  83%|████████▎ | 25/30 [00:05<00:01,  4.06it/s][A
+Evaluating:  87%|████████▋ | 26/30 [00:05<00:00,  4.05it/s][A
+Evaluating:  90%|█████████ | 27/30 [00:06<00:00,  4.00it/s][A
+Evaluating:  93%|█████████▎| 28/30 [00:06<00:00,  3.95it/s][A
+Evaluating:  97%|█████████▋| 29/30 [00:06<00:00,  3.93it/s][A
+Evaluating: 100%|██████████| 30/30 [00:06<00:00,  4.61it/s][AEvaluating: 100%|██████████| 30/30 [00:06<00:00,  4.43it/s]
+INFO:model:Best acc on dev: 0.8372 | global step: 30

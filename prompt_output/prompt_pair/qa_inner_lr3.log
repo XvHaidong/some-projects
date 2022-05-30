@@ -1,0 +1,1472 @@
+INFO:run:=== Task: QNLI ===
+INFO:run:Namespace(data_dir='data/k-shot/QNLI/16-13', model_type='bert', model_name_or_path='models', cache_dir='pretrain/bert', task_name='QNLI', output_dir='output/QNLI/inner/16-13', overwrite_output_dir=True, pattern_ids=[1], alpha=0.9999, pet_repetitions=1, pet_max_seq_length=128, pet_per_gpu_train_batch_size=160, pet_per_gpu_eval_batch_size=160, pet_gradient_accumulation_steps=1, pet_num_train_epochs=3, pet_max_steps=250, pet_max_steps_stage1=250, train_examples=-1, eval_examples=-1, dev_examples=-1, split_examples_evenly=False, learning_rate=0.001, learning_rate_stage1=0.001, weight_decay=0.1, adam_epsilon=1e-08, max_grad_norm=1.0, warmup_steps=0, early_stop_epochs=8, no_cuda=False, seed=42, do_train=True, do_eval=False, eval_set='test', embed_size=768, prompt_encoder_type='inner', eval_every_step=10, two_stage_train=False, extra_mask_rate=0.0, device='cuda', n_gpu=1, label_list=['Positive', 'Negative', 'None'], metrics=['acc'])
+INFO:run:--- Running data split: 16-13 ---
+Some weights of the model checkpoint at models were not used when initializing BertForMaskedLM: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+INFO:train:--- Start iteration 0 ---
+INFO:train:=== Start training ===
+config.device== cuda
+Epoch:   0%|          | 0/3 [00:00<?, ?it/s]/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.25it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.27it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.33it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.33it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.31it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.28it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:03,  4.25it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.21it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.15it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.11it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.08it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.05it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.00it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.96it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.86it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.81it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.80it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.75it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.70it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.68it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.63it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.58it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.13it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.99it/s]
+INFO:model:Best acc on dev: -1.0000 | global step: 0
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.25it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.30it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.34it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.34it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.31it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.29it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.25it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.20it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.12it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.08it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.05it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.02it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.99it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.94it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.92it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.81it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.78it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.77it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.73it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.69it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.68it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.63it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.59it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.57it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.53it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.49it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.46it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.41it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.38it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.37it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.33it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.29it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.28it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.24it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.20it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.19it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.15it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.12it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.12it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.08it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.00it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  2.99it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  2.96it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.94it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.94it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.90it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.86it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.46it/s]
+INFO:model:eval_data performance: {'acc': 0.8382118147951038}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.27it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.30it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.33it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.32it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.29it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.27it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.23it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.18it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.15it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.10it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.05it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.02it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.97it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.90it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.85it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.81it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.79it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.73it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.68it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.66it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.62it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.57it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.12it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.98it/s]
+INFO:model:Dev scores: 0.8372 | early_stop_count: 1
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.22it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.29it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.33it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.33it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.30it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.28it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.22it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.17it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.14it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.10it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.06it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.03it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.98it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.95it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.89it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.86it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.82it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.79it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.74it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.72it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.67it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.64it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.59it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.55it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.51it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.49it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.45it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.41it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.40it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.36it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.32it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.32it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.27it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.23it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.23it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.17it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.17it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.13it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.12it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.08it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.04it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.00it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  3.01it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.97it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.98it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.94it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.94it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.48it/s]
+INFO:model:eval_data performance: {'acc': 0.8382118147951038}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.38it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.39it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.36it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.34it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.31it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.28it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.24it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.21it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.18it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.13it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.08it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.05it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.01it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.97it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.89it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.85it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.82it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.77it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:04<00:01,  3.75it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.70it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.65it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.61it/s][A
+Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.15it/s][AEvaluating: 100%|██████████| 24/24 [00:05<00:00,  4.01it/s]
+INFO:model:Best acc on dev: 0.8372 | global step: 20
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.40it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.40it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.38it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.35it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.31it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.28it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.24it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.20it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.16it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:08,  4.11it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.06it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.03it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.99it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.95it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.90it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.86it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.82it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.79it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.74it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.71it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.67it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.64it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.59it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.55it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.50it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.45it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.42it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.39it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.39it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.35it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.30it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.26it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.21it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.17it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.19it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.16it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.12it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.13it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.08it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.04it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.05it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.00it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  2.96it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.96it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.90it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.86it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.87it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.46it/s]
+INFO:model:eval_data performance: {'acc': 0.841138903672166}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.14it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.32it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.33it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.32it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.30it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.25it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.22it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.10it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.09it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.06it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.04it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.02it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.98it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.94it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.91it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.86it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.82it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.78it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.74it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.71it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.68it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.63it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.57it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.12it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.97it/s]
+INFO:model:Best acc on dev: 0.8490 | global step: 30
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.28it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.35it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.35it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.33it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.30it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.24it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.21it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.10it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.10it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.07it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.03it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.02it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.97it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.94it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.90it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.87it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.82it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.79it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.74it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.71it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.67it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.65it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.61it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.56it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.55it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:05,  3.50it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.49it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.44it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.43it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.38it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.37it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.31it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.30it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:03,  3.26it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.24it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.19it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.18it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.14it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.14it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.09it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.08it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.03it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  3.03it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.99it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.99it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.92it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.93it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.49it/s]
+INFO:model:eval_data performance: {'acc': 0.859765832889835}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.35it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:04,  4.41it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.40it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.38it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.34it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.29it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:03,  4.27it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.22it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.17it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.14it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.07it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.02it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.00it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.95it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.93it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.88it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.85it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.80it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.78it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:04<00:01,  3.72it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.70it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.65it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.63it/s][A
+Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.12it/s][AEvaluating: 100%|██████████| 24/24 [00:05<00:00,  4.01it/s]
+INFO:model:Best acc on dev: 0.8647 | global step: 40
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.35it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.38it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.37it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.34it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.30it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.26it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.22it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.18it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.16it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.10it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.06it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.03it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.98it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.93it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.90it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.86it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.82it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.79it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.74it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.70it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.68it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.63it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.59it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.57it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.53it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:05,  3.52it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.47it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.45it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.40it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.40it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.35it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.33it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.29it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:03,  3.27it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.18it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.18it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.15it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.15it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.10it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.09it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.04it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.04it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  3.00it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.99it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.94it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.95it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.92it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.48it/s]
+INFO:model:eval_data performance: {'acc': 0.8807876530069185}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.35it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.36it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.37it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.35it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.32it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.29it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:03,  4.25it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.21it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.17it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.13it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.08it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.05it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.00it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.95it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.93it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.88it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.83it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.81it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.76it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:04<00:01,  3.71it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.69it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.65it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.60it/s][A
+Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.14it/s][AEvaluating: 100%|██████████| 24/24 [00:05<00:00,  4.01it/s]
+INFO:model:Best acc on dev: 0.8791 | global step: 50
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.43it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.43it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:09,  4.40it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.36it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.23it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.22it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.20it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.17it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.14it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.09it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.05it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.01it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.95it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.91it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.89it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.85it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.81it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.79it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.75it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.71it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.69it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.64it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.59it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.56it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.52it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.48it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.47it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.43it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.39it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.38it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.34it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.30it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.29it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.21it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.17it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.18it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.15it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.11it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.10it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.07it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.04it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.04it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  2.99it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.90it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.92it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.90it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.88it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.47it/s]
+INFO:model:eval_data performance: {'acc': 0.8819850984566259}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.28it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.33it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.35it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.34it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.31it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.28it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.22it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.18it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.15it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  3.99it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  3.85it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:03,  3.87it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.86it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.85it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.85it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.82it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.78it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.77it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.73it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.67it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.66it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.62it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.58it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.11it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.95it/s]
+INFO:model:Best acc on dev: 0.8807 | global step: 60
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.26it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.29it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.32it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.32it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.29it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.27it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.21it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.16it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.13it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.08it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.02it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.00it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.96it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.93it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.88it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.86it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.81it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.79it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.74it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.71it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.66it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.65it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.58it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.52it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.48it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.48it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.45it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.41it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.38it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.32it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.30it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.30it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.25it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.21it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.22it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.18it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.15it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.14it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.09it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.06it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.06it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.02it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  2.98it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.99it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.95it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.92it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.93it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.47it/s]
+INFO:model:eval_data performance: {'acc': 0.8839808408728047}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.31it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.31it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.35it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.34it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.31it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.27it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.25it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.21it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.16it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.12it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.07it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.03it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.00it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.96it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.88it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.84it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.79it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.76it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.71it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.69it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.64it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.62it/s][A
+Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.14it/s][AEvaluating: 100%|██████████| 24/24 [00:05<00:00,  4.00it/s]
+INFO:model:Dev scores: 0.8642 | early_stop_count: 1
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.33it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:04,  4.41it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.38it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.36it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.33it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.28it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:03,  4.25it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.19it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.15it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.11it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.07it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.02it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.00it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.95it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.89it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.86it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.82it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.77it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.75it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.71it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.64it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.63it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.59it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.10it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.99it/s]
+INFO:model:Best acc on dev: 0.8951 | global step: 70
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.31it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.31it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.32it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.31it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.28it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.25it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.14it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.13it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.11it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.07it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.03it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.00it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.91it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.89it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.88it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.84it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.81it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.79it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.75it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.70it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.69it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.64it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.60it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.58it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.54it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:05,  3.52it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.45it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.44it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.40it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.38it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.34it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.32it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.28it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:03,  3.27it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.22it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.21it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.16it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.14it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.06it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.07it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.04it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.04it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  2.98it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.96it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.93it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.94it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.91it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.47it/s]
+INFO:model:eval_data performance: {'acc': 0.8919638105375199}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+Epoch:  33%|███▎      | 1/3 [05:43<11:27, 343.52s/it]
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.43it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:04,  4.45it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.41it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.38it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.34it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.31it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:03,  4.26it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.22it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.18it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.13it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.09it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.05it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.00it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.96it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.87it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.83it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.81it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.75it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:04<00:01,  3.71it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.68it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.64it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.59it/s][A
+Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.15it/s][AEvaluating: 100%|██████████| 24/24 [00:05<00:00,  4.01it/s]
+INFO:model:Best acc on dev: 0.8991 | global step: 90
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.41it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.43it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.40it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.36it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.32it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.29it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.24it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.15it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.12it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.08it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.00it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  3.92it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.90it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.88it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.86it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.78it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.76it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.73it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.65it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.63it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.62it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.59it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.55it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.55it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.50it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.47it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.46it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.42it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.38it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.38it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.33it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.30it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.29it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.25it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.20it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.20it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.16it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.12it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.11it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.06it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.02it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.02it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  2.98it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.94it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.94it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.90it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.89it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.46it/s]
+INFO:model:eval_data performance: {'acc': 0.8963544438531134}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.41it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.38it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.38it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.36it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.32it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.29it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.25it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.20it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.17it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.13it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.08it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.05it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.00it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.95it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.87it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.82it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.80it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.75it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:04<00:01,  3.70it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.64it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.59it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.57it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.07it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.99it/s]
+INFO:model:Best acc on dev: 0.9069 | global step: 100
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:11,  4.10it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.23it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.29it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:10,  4.30it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.28it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.26it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.21it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.18it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.09it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.07it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.04it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.01it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.97it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.95it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.90it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.86it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.82it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.80it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.75it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.72it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.67it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.63it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.59it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.54it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.50it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.49it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.45it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.41it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.41it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.36it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.32it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.32it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.26it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.23it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.23it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.19it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.15it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.14it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.10it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.07it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.07it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.03it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  2.97it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.98it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.94it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.92it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.93it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.47it/s]
+INFO:model:eval_data performance: {'acc': 0.9040713145290048}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.30it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.36it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.37it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.35it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.32it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.29it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:03,  4.25it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.21it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.17it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.13it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.08it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.04it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.00it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.97it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.89it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.84it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.81it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.76it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:04<00:01,  3.73it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.68it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.66it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.61it/s][A
+Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.15it/s][AEvaluating: 100%|██████████| 24/24 [00:05<00:00,  4.01it/s]
+INFO:model:Best acc on dev: 0.9136 | global step: 110
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.33it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.37it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.36it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.33it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.30it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.27it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.23it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.18it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.16it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.11it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.06it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.03it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.97it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.94it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.87it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.85it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.81it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.78it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.73it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.71it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.62it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.60it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.56it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.53it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.50it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.50it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.45it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.40it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.39it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.35it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.30it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.31it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.26it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.18it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.19it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.16it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.13it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.13it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.09it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.06it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.06it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.02it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  2.96it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.97it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.94it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.91it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.93it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.47it/s]
+INFO:model:eval_data performance: {'acc': 0.9040713145290048}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.31it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.31it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.34it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.32it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.30it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.27it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.22it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.17it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.15it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.11it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.04it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.02it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.98it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.91it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.90it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.85it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.80it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.78it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.72it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.68it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.62it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.57it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.52it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.03it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.96it/s]
+INFO:model:Dev scores: 0.9114 | early_stop_count: 1
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.24it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.33it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.34it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.33it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.31it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.27it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.24it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.19it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.12it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.08it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.04it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.03it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.99it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.95it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.90it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.87it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.82it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.80it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.72it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.70it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.66it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.64it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.60it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.14it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.99it/s]
+INFO:model:Dev scores: 0.9117 | early_stop_count: 2
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.46it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:04,  4.44it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.41it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.35it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.25it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.24it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.21it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.18it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.15it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.11it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.06it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.03it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.99it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.94it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.91it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.86it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.82it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.79it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.74it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.70it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.68it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.63it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.59it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.12it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.99it/s]
+INFO:model:Best acc on dev: 0.9138 | global step: 120
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.40it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.36it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.36it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.33it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.30it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.28it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.24it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.19it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.16it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.11it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.06it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.03it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.98it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.95it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.90it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:07,  3.88it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.83it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.80it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.75it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:04<00:07,  3.74it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.69it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.66it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.62it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.57it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.55it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:05,  3.50it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:06<00:05,  3.49it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.43it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.41it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.36it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.35it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.30it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.29it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:03,  3.25it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.24it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.20it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.18it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.13it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.13it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.08it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.08it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.03it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  3.03it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.98it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.98it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.94it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.95it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.49it/s]
+INFO:model:eval_data performance: {'acc': 0.9092602448110697}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.35it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:04,  4.41it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.39it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.41it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.36it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.25it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.21it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.19it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.15it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.11it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.08it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.02it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.96it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.94it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.89it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.87it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.83it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.80it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.75it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.73it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.68it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.65it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.61it/s][A
+Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.16it/s][AEvaluating: 100%|██████████| 24/24 [00:05<00:00,  4.00it/s]
+INFO:model:Dev scores: 0.9112 | early_stop_count: 1
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.34it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.36it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.35it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.33it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.31it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.27it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.24it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.20it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.16it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.12it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  3.76it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:03,  3.80it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.84it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.84it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.85it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.82it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.80it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.76it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.73it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.70it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.68it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.62it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.60it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.11it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.95it/s]
+INFO:model:Dev scores: 0.9152 | early_stop_count: 2
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.35it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:04,  4.42it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.39it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.40it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.36it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.30it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.24it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.20it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.15it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.11it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.09it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.04it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.99it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.97it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.91it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.86it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.84it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.79it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.74it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:04<00:01,  3.72it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.68it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.63it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.62it/s][A
+Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.13it/s][AEvaluating: 100%|██████████| 24/24 [00:05<00:00,  4.00it/s]
+INFO:model:Best acc on dev: 0.9165 | global step: 150
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.37it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.31it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.33it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.33it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.30it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.26it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.23it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.19it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.15it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:08,  4.11it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.06it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.02it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  4.00it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.95it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.92it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.87it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.84it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.80it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:07,  3.77it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.72it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.66it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.61it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.61it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.57it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.52it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.48it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.48it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.43it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.39it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:07<00:05,  3.37it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.33it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.27it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.27it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.24it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.20it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.19it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.14it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.11it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.11it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.07it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.04it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.02it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  2.96it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  2.94it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.93it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.90it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.88it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.47it/s]
+INFO:model:eval_data performance: {'acc': 0.9058009579563597}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+Epoch:  67%|██████▋   | 2/3 [10:17<05:02, 302.55s/it]
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.23it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.29it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.31it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.30it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.29it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.27it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.24it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.19it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.17it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.10it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.06it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.04it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.99it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.96it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.89it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.83it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.80it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.75it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.73it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.67it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.66it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.60it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.12it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.99it/s]
+INFO:model:Dev scores: 0.9090 | early_stop_count: 1
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.42it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:04,  4.42it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.40it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.37it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.33it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.30it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:03,  4.26it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.21it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.17it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.12it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.08it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.04it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.00it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.95it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.87it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.83it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.81it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.76it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:04<00:01,  3.71it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.69it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.63it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.59it/s][A
+Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.14it/s][AEvaluating: 100%|██████████| 24/24 [00:05<00:00,  4.00it/s]
+INFO:model:Dev scores: 0.9136 | early_stop_count: 2
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.18it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.33it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.34it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.33it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.31it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.28it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.23it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.18it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.10it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.07it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.04it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.02it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.98it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.93it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.91it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.86it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.81it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.79it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.74it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.70it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.68it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.63it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.59it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.13it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.98it/s]
+INFO:model:Dev scores: 0.9165 | early_stop_count: 3
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.22it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.28it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.32it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.33it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.30it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.27it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.23it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.19it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.16it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.11it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.06it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.03it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.99it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.96it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.91it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.88it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.81it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.78it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.74it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.72it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.66it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.63it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.59it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.13it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.99it/s]
+INFO:model:Dev scores: 0.9069 | early_stop_count: 4
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.29it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.35it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.37it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.35it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.31it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.28it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.24it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.19it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.15it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.11it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.07it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.03it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:03,  3.63it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.69it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.74it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:04<00:02,  3.74it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.74it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.73it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.70it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.67it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.66it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.61it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.57it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.12it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.94it/s]
+INFO:model:Best acc on dev: 0.9176 | global step: 180
+
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s][A
+Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.24it/s][A
+Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.13it/s][A
+Evaluating:   6%|▋         | 3/47 [00:00<00:10,  4.23it/s][A
+Evaluating:   9%|▊         | 4/47 [00:00<00:10,  4.26it/s][A
+Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.25it/s][A
+Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.24it/s][A
+Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.21it/s][A
+Evaluating:  17%|█▋        | 8/47 [00:01<00:09,  4.17it/s][A
+Evaluating:  19%|█▉        | 9/47 [00:02<00:09,  4.13it/s][A
+Evaluating:  21%|██▏       | 10/47 [00:02<00:09,  4.09it/s][A
+Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.05it/s][A
+Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.03it/s][A
+Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  3.98it/s][A
+Evaluating:  30%|██▉       | 14/47 [00:03<00:08,  3.95it/s][A
+Evaluating:  32%|███▏      | 15/47 [00:03<00:08,  3.89it/s][A
+Evaluating:  34%|███▍      | 16/47 [00:03<00:08,  3.87it/s][A
+Evaluating:  36%|███▌      | 17/47 [00:04<00:07,  3.83it/s][A
+Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.81it/s][A
+Evaluating:  40%|████      | 19/47 [00:04<00:08,  3.50it/s][A
+Evaluating:  43%|████▎     | 20/47 [00:05<00:07,  3.56it/s][A
+Evaluating:  45%|████▍     | 21/47 [00:05<00:07,  3.56it/s][A
+Evaluating:  47%|████▋     | 22/47 [00:05<00:07,  3.57it/s][A
+Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.55it/s][A
+Evaluating:  51%|█████     | 24/47 [00:06<00:06,  3.52it/s][A
+Evaluating:  53%|█████▎    | 25/47 [00:06<00:06,  3.50it/s][A
+Evaluating:  55%|█████▌    | 26/47 [00:06<00:06,  3.49it/s][A
+Evaluating:  57%|█████▋    | 27/47 [00:07<00:05,  3.45it/s][A
+Evaluating:  60%|█████▉    | 28/47 [00:07<00:05,  3.41it/s][A
+Evaluating:  62%|██████▏   | 29/47 [00:07<00:05,  3.41it/s][A
+Evaluating:  64%|██████▍   | 30/47 [00:08<00:05,  3.36it/s][A
+Evaluating:  66%|██████▌   | 31/47 [00:08<00:04,  3.29it/s][A
+Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.29it/s][A
+Evaluating:  70%|███████   | 33/47 [00:08<00:04,  3.25it/s][A
+Evaluating:  72%|███████▏  | 34/47 [00:09<00:04,  3.22it/s][A
+Evaluating:  74%|███████▍  | 35/47 [00:09<00:03,  3.22it/s][A
+Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.18it/s][A
+Evaluating:  79%|███████▊  | 37/47 [00:10<00:03,  3.12it/s][A
+Evaluating:  81%|████████  | 38/47 [00:10<00:02,  3.13it/s][A
+Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.09it/s][A
+Evaluating:  85%|████████▌ | 40/47 [00:11<00:02,  3.06it/s][A
+Evaluating:  87%|████████▋ | 41/47 [00:11<00:01,  3.07it/s][A
+Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.03it/s][A
+Evaluating:  91%|█████████▏| 43/47 [00:12<00:01,  3.00it/s][A
+Evaluating:  94%|█████████▎| 44/47 [00:12<00:01,  3.00it/s][A
+Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.96it/s][A
+Evaluating:  98%|█████████▊| 46/47 [00:13<00:00,  2.92it/s][A
+Evaluating: 100%|██████████| 47/47 [00:13<00:00,  2.90it/s][AEvaluating: 100%|██████████| 47/47 [00:13<00:00,  3.46it/s]
+INFO:model:eval_data performance: {'acc': 0.9145822245875466}
+INFO:model:Saving trained model at output/QNLI/inner/16-13/p1-i0...
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.34it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.37it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.35it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.33it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.30it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.28it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.23it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.19it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.16it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.10it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.06it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.04it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.99it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.95it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.89it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.86it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.81it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.79it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.74it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.72it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.66it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.64it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.59it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.12it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.99it/s]
+INFO:model:Dev scores: 0.9168 | early_stop_count: 1
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s][A
+Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.36it/s][A
+Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.37it/s][A
+Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.36it/s][A
+Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.22it/s][A
+Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.22it/s][A
+Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.22it/s][A
+Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.20it/s][A
+Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.17it/s][A
+Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.13it/s][A
+Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.10it/s][A
+Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.05it/s][A
+Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.01it/s][A
+Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  3.98it/s][A
+Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  3.94it/s][A
+Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.92it/s][A
+Evaluating:  67%|██████▋   | 16/24 [00:03<00:02,  3.86it/s][A
+Evaluating:  71%|███████   | 17/24 [00:04<00:01,  3.83it/s][A
+Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  3.79it/s][A
+Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  3.76it/s][A
+Evaluating:  83%|████████▎ | 20/24 [00:05<00:01,  3.71it/s][A
+Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.69it/s][A
+Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.64it/s][A
+Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.62it/s][A
+Evaluating: 100%|██████████| 24/24 [00:06<00:00,  4.13it/s][AEvaluating: 100%|██████████| 24/24 [00:06<00:00,  3.98it/s]
+INFO:model:Dev scores: 0.9130 | early_stop_count: 2
+/usr/local/miniconda3/envs/dart/lib/python3.10/site-packages/torch/nn/modules/module.py:1033: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+Epoch:  67%|██████▋   | 2/3 [12:37<06:18, 378.60s/it]
+Some weights of the model checkpoint at models were not used when initializing BertForMaskedLM: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Evaluating:   0%|          | 0/94 [00:00<?, ?it/s]Evaluating:   1%|          | 1/94 [00:00<00:22,  4.18it/s]Evaluating:   2%|▏         | 2/94 [00:00<00:21,  4.36it/s]Evaluating:   3%|▎         | 3/94 [00:00<00:20,  4.41it/s]Evaluating:   4%|▍         | 4/94 [00:00<00:20,  4.42it/s]Evaluating:   5%|▌         | 5/94 [00:01<00:20,  4.37it/s]Evaluating:   6%|▋         | 6/94 [00:01<00:20,  4.37it/s]Evaluating:   7%|▋         | 7/94 [00:01<00:20,  4.31it/s]Evaluating:   9%|▊         | 8/94 [00:01<00:19,  4.31it/s]Evaluating:  10%|▉         | 9/94 [00:02<00:20,  4.16it/s]Evaluating:  11%|█         | 10/94 [00:02<00:20,  4.11it/s]Evaluating:  12%|█▏        | 11/94 [00:02<00:20,  4.06it/s]Evaluating:  13%|█▎        | 12/94 [00:02<00:20,  4.03it/s]Evaluating:  14%|█▍        | 13/94 [00:03<00:20,  3.98it/s]Evaluating:  15%|█▍        | 14/94 [00:03<00:20,  3.92it/s]Evaluating:  16%|█▌        | 15/94 [00:03<00:20,  3.84it/s]Evaluating:  17%|█▋        | 16/94 [00:03<00:20,  3.80it/s]Evaluating:  18%|█▊        | 17/94 [00:04<00:20,  3.77it/s]Evaluating:  19%|█▉        | 18/94 [00:04<00:20,  3.76it/s]Evaluating:  20%|██        | 19/94 [00:04<00:20,  3.72it/s]Evaluating:  21%|██▏       | 20/94 [00:05<00:20,  3.68it/s]Evaluating:  22%|██▏       | 21/94 [00:05<00:19,  3.66it/s]Evaluating:  23%|██▎       | 22/94 [00:05<00:19,  3.62it/s]Evaluating:  24%|██▍       | 23/94 [00:05<00:19,  3.57it/s]Evaluating:  26%|██▌       | 24/94 [00:06<00:19,  3.56it/s]Evaluating:  27%|██▋       | 25/94 [00:06<00:19,  3.52it/s]Evaluating:  28%|██▊       | 26/94 [00:06<00:19,  3.48it/s]Evaluating:  29%|██▊       | 27/94 [00:07<00:19,  3.46it/s]Evaluating:  30%|██▉       | 28/94 [00:07<00:19,  3.42it/s]Evaluating:  31%|███       | 29/94 [00:07<00:19,  3.37it/s]Evaluating:  32%|███▏      | 30/94 [00:07<00:19,  3.37it/s]Evaluating:  33%|███▎      | 31/94 [00:08<00:18,  3.33it/s]Evaluating:  34%|███▍      | 32/94 [00:08<00:18,  3.29it/s]Evaluating:  35%|███▌      | 33/94 [00:08<00:18,  3.27it/s]Evaluating:  36%|███▌      | 34/94 [00:09<00:18,  3.23it/s]Evaluating:  37%|███▋      | 35/94 [00:09<00:18,  3.20it/s]Evaluating:  38%|███▊      | 36/94 [00:09<00:18,  3.19it/s]Evaluating:  39%|███▉      | 37/94 [00:10<00:18,  3.15it/s]Evaluating:  40%|████      | 38/94 [00:10<00:17,  3.11it/s]Evaluating:  41%|████▏     | 39/94 [00:10<00:17,  3.12it/s]Evaluating:  43%|████▎     | 40/94 [00:11<00:17,  3.05it/s]Evaluating:  44%|████▎     | 41/94 [00:11<00:17,  3.02it/s]Evaluating:  45%|████▍     | 42/94 [00:11<00:17,  3.03it/s]Evaluating:  46%|████▌     | 43/94 [00:12<00:17,  2.99it/s]Evaluating:  47%|████▋     | 44/94 [00:12<00:16,  2.96it/s]Evaluating:  48%|████▊     | 45/94 [00:12<00:16,  2.95it/s]Evaluating:  49%|████▉     | 46/94 [00:13<00:16,  2.91it/s]Evaluating:  50%|█████     | 47/94 [00:13<00:16,  2.86it/s]Evaluating:  51%|█████     | 48/94 [00:13<00:16,  2.87it/s]Evaluating:  52%|█████▏    | 49/94 [00:14<00:15,  2.84it/s]Evaluating:  53%|█████▎    | 50/94 [00:14<00:15,  2.81it/s]Evaluating:  54%|█████▍    | 51/94 [00:14<00:15,  2.81it/s]Evaluating:  55%|█████▌    | 52/94 [00:15<00:15,  2.77it/s]Evaluating:  56%|█████▋    | 53/94 [00:15<00:15,  2.71it/s]Evaluating:  57%|█████▋    | 54/94 [00:16<00:14,  2.71it/s]Evaluating:  59%|█████▊    | 55/94 [00:16<00:14,  2.69it/s]Evaluating:  60%|█████▉    | 56/94 [00:16<00:14,  2.66it/s]Evaluating:  61%|██████    | 57/94 [00:17<00:14,  2.64it/s]Evaluating:  62%|██████▏   | 58/94 [00:17<00:13,  2.60it/s]Evaluating:  63%|██████▎   | 59/94 [00:18<00:13,  2.59it/s]Evaluating:  64%|██████▍   | 60/94 [00:18<00:13,  2.61it/s]Evaluating:  65%|██████▍   | 61/94 [00:18<00:12,  2.58it/s]Evaluating:  66%|██████▌   | 62/94 [00:19<00:12,  2.56it/s]Evaluating:  67%|██████▋   | 63/94 [00:19<00:12,  2.56it/s]Evaluating:  68%|██████▊   | 64/94 [00:20<00:11,  2.54it/s]Evaluating:  69%|██████▉   | 65/94 [00:20<00:11,  2.51it/s]Evaluating:  70%|███████   | 66/94 [00:20<00:11,  2.52it/s]Evaluating:  71%|███████▏  | 67/94 [00:21<00:10,  2.49it/s]Evaluating:  72%|███████▏  | 68/94 [00:21<00:10,  2.47it/s]Evaluating:  73%|███████▎  | 69/94 [00:22<00:10,  2.48it/s]Evaluating:  74%|███████▍  | 70/94 [00:22<00:10,  2.33it/s]Evaluating:  76%|███████▌  | 71/94 [00:22<00:09,  2.33it/s]Evaluating:  77%|███████▋  | 72/94 [00:23<00:09,  2.37it/s]Evaluating:  78%|███████▊  | 73/94 [00:23<00:08,  2.35it/s]Evaluating:  79%|███████▊  | 74/94 [00:24<00:08,  2.33it/s]Evaluating:  80%|███████▉  | 75/94 [00:24<00:08,  2.34it/s]Evaluating:  81%|████████  | 76/94 [00:25<00:07,  2.32it/s]Evaluating:  82%|████████▏ | 77/94 [00:25<00:07,  2.30it/s]Evaluating:  83%|████████▎ | 78/94 [00:25<00:06,  2.33it/s]Evaluating:  84%|████████▍ | 79/94 [00:26<00:06,  2.30it/s]Evaluating:  85%|████████▌ | 80/94 [00:26<00:06,  2.27it/s]Evaluating:  86%|████████▌ | 81/94 [00:27<00:05,  2.28it/s]Evaluating:  87%|████████▋ | 82/94 [00:27<00:05,  2.25it/s]Evaluating:  88%|████████▊ | 83/94 [00:28<00:04,  2.23it/s]Evaluating:  89%|████████▉ | 84/94 [00:28<00:04,  2.25it/s]Evaluating:  90%|█████████ | 85/94 [00:29<00:04,  2.22it/s]Evaluating:  91%|█████████▏| 86/94 [00:29<00:03,  2.19it/s]Evaluating:  93%|█████████▎| 87/94 [00:30<00:03,  2.21it/s]Evaluating:  94%|█████████▎| 88/94 [00:30<00:02,  2.18it/s]Evaluating:  95%|█████████▍| 89/94 [00:30<00:02,  2.14it/s]Evaluating:  96%|█████████▌| 90/94 [00:31<00:01,  2.15it/s]Evaluating:  97%|█████████▋| 91/94 [00:31<00:01,  2.13it/s]Evaluating:  98%|█████████▊| 92/94 [00:32<00:00,  2.11it/s]Evaluating:  99%|█████████▉| 93/94 [00:32<00:00,  2.13it/s]Evaluating: 100%|██████████| 94/94 [00:33<00:00,  2.15it/s]Evaluating: 100%|██████████| 94/94 [00:33<00:00,  2.82it/s]
+INFO:train:train_data performance after training: {'acc': 0.9702825159914712}
+Some weights of the model checkpoint at models were not used when initializing BertForMaskedLM: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Evaluating:   0%|          | 0/47 [00:00<?, ?it/s]Evaluating:   2%|▏         | 1/47 [00:00<00:10,  4.34it/s]Evaluating:   4%|▍         | 2/47 [00:00<00:10,  4.44it/s]Evaluating:   6%|▋         | 3/47 [00:00<00:09,  4.44it/s]Evaluating:   9%|▊         | 4/47 [00:00<00:09,  4.43it/s]Evaluating:  11%|█         | 5/47 [00:01<00:09,  4.41it/s]Evaluating:  13%|█▎        | 6/47 [00:01<00:09,  4.39it/s]Evaluating:  15%|█▍        | 7/47 [00:01<00:09,  4.36it/s]Evaluating:  17%|█▋        | 8/47 [00:01<00:08,  4.35it/s]Evaluating:  19%|█▉        | 9/47 [00:02<00:08,  4.32it/s]Evaluating:  21%|██▏       | 10/47 [00:02<00:08,  4.30it/s]Evaluating:  23%|██▎       | 11/47 [00:02<00:08,  4.27it/s]Evaluating:  26%|██▌       | 12/47 [00:02<00:08,  4.25it/s]Evaluating:  28%|██▊       | 13/47 [00:03<00:08,  4.23it/s]Evaluating:  30%|██▉       | 14/47 [00:03<00:07,  4.22it/s]Evaluating:  32%|███▏      | 15/47 [00:03<00:07,  4.10it/s]Evaluating:  34%|███▍      | 16/47 [00:03<00:07,  4.10it/s]Evaluating:  36%|███▌      | 17/47 [00:03<00:07,  4.09it/s]Evaluating:  38%|███▊      | 18/47 [00:04<00:07,  3.97it/s]Evaluating:  40%|████      | 19/47 [00:04<00:06,  4.00it/s]Evaluating:  43%|████▎     | 20/47 [00:04<00:06,  3.88it/s]Evaluating:  45%|████▍     | 21/47 [00:05<00:06,  3.92it/s]Evaluating:  47%|████▋     | 22/47 [00:05<00:06,  3.81it/s]Evaluating:  49%|████▉     | 23/47 [00:05<00:06,  3.86it/s]Evaluating:  51%|█████     | 24/47 [00:05<00:06,  3.75it/s]Evaluating:  53%|█████▎    | 25/47 [00:06<00:05,  3.79it/s]Evaluating:  55%|█████▌    | 26/47 [00:06<00:05,  3.68it/s]Evaluating:  57%|█████▋    | 27/47 [00:06<00:05,  3.73it/s]Evaluating:  60%|█████▉    | 28/47 [00:06<00:05,  3.63it/s]Evaluating:  62%|██████▏   | 29/47 [00:07<00:04,  3.69it/s]Evaluating:  64%|██████▍   | 30/47 [00:07<00:04,  3.58it/s]Evaluating:  66%|██████▌   | 31/47 [00:07<00:04,  3.59it/s]Evaluating:  68%|██████▊   | 32/47 [00:08<00:04,  3.50it/s]Evaluating:  70%|███████   | 33/47 [00:08<00:03,  3.58it/s]Evaluating:  72%|███████▏  | 34/47 [00:08<00:03,  3.47it/s]Evaluating:  74%|███████▍  | 35/47 [00:08<00:03,  3.50it/s]Evaluating:  77%|███████▋  | 36/47 [00:09<00:03,  3.38it/s]Evaluating:  79%|███████▊  | 37/47 [00:09<00:02,  3.47it/s]Evaluating:  81%|████████  | 38/47 [00:09<00:02,  3.35it/s]Evaluating:  83%|████████▎ | 39/47 [00:10<00:02,  3.24it/s]Evaluating:  85%|████████▌ | 40/47 [00:10<00:02,  3.16it/s]Evaluating:  87%|████████▋ | 41/47 [00:10<00:01,  3.12it/s]Evaluating:  89%|████████▉ | 42/47 [00:11<00:01,  3.07it/s]Evaluating:  91%|█████████▏| 43/47 [00:11<00:01,  3.02it/s]Evaluating:  94%|█████████▎| 44/47 [00:11<00:00,  3.01it/s]Evaluating:  96%|█████████▌| 45/47 [00:12<00:00,  2.96it/s]Evaluating:  98%|█████████▊| 46/47 [00:12<00:00,  2.93it/s]Evaluating: 100%|██████████| 47/47 [00:12<00:00,  2.93it/s]Evaluating: 100%|██████████| 47/47 [00:12<00:00,  3.64it/s]
+Evaluating:   0%|          | 0/24 [00:00<?, ?it/s]Evaluating:   4%|▍         | 1/24 [00:00<00:05,  4.32it/s]Evaluating:   8%|▊         | 2/24 [00:00<00:05,  4.34it/s]Evaluating:  12%|█▎        | 3/24 [00:00<00:04,  4.32it/s]Evaluating:  17%|█▋        | 4/24 [00:00<00:04,  4.29it/s]Evaluating:  21%|██        | 5/24 [00:01<00:04,  4.33it/s]Evaluating:  25%|██▌       | 6/24 [00:01<00:04,  4.34it/s]Evaluating:  29%|██▉       | 7/24 [00:01<00:04,  4.23it/s]Evaluating:  33%|███▎      | 8/24 [00:01<00:03,  4.26it/s]Evaluating:  38%|███▊      | 9/24 [00:02<00:03,  4.27it/s]Evaluating:  42%|████▏     | 10/24 [00:02<00:03,  4.15it/s]Evaluating:  46%|████▌     | 11/24 [00:02<00:03,  4.19it/s]Evaluating:  50%|█████     | 12/24 [00:02<00:02,  4.20it/s]Evaluating:  54%|█████▍    | 13/24 [00:03<00:02,  4.12it/s]Evaluating:  58%|█████▊    | 14/24 [00:03<00:02,  4.14it/s]Evaluating:  62%|██████▎   | 15/24 [00:03<00:02,  3.98it/s]Evaluating:  67%|██████▋   | 16/24 [00:03<00:01,  4.02it/s]Evaluating:  71%|███████   | 17/24 [00:04<00:01,  4.01it/s]Evaluating:  75%|███████▌  | 18/24 [00:04<00:01,  4.03it/s]Evaluating:  79%|███████▉  | 19/24 [00:04<00:01,  4.01it/s]Evaluating:  83%|████████▎ | 20/24 [00:04<00:01,  3.88it/s]Evaluating:  88%|████████▊ | 21/24 [00:05<00:00,  3.90it/s]Evaluating:  92%|█████████▏| 22/24 [00:05<00:00,  3.93it/s]Evaluating:  96%|█████████▌| 23/24 [00:05<00:00,  3.80it/s]Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.50it/s]Evaluating: 100%|██████████| 24/24 [00:05<00:00,  4.16it/s]
+INFO:train:--- RESULT (pattern_id=1) ---
+INFO:train:eval results:
+INFO:train:{'acc': 0.9145822245875466}
+INFO:train:dev results:
+INFO:train:{'acc': 0.9188900747065102}
+INFO:train:Saving complete
+INFO:run:
+
+========== RESULTS OF TASK: QNLI ==========
+INFO:run:acc: 91.5(0.0)
+
